@@ -1,0 +1,34 @@
+﻿@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br id="Departments"/>
+
+<h1>Departments</h1>
+
+
+<hr />
+
+<a href="/Department/AddNewDepartment/#AddDepartment" class="btn btn-primary" style="display:block; width:20% ;">Add Department</a>
+
+@foreach (Department dept in Model)
+{
+    <div class="col-sm-5" style="display:inline-block;margin-top:5px;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@dept.Name</h5>
+                <p class="card-text">Manager Name: @dept.ManagerName</p>
+
+                <a href="/Department/Details/@dept.Id/#Details" class="btn btn-primary">Details</a>
+                <a href="/Department/Edit/@dept.Id/#EditDepartment" class="btn btn-primary">Edit</a>
+                <a href="/Department/Delete/@dept.Id" class="btn btn-primary">Remove</a>
+
+
+            </div>
+        </div>
+    </div>
+
+    <pre style="display:inline-block">     </pre>
+}
+

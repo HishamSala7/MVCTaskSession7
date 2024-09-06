@@ -1,0 +1,37 @@
+﻿@model List<Instructor>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<br id="Instructors" />
+	<h1 >
+		Instructor List...
+	</h1>
+
+<hr />
+
+<a href="/Instructor/AddNewInstructor/#AddInstructor" class="btn btn-primary" style="display:block; width:20% ;">Add Instructor</a>
+
+@foreach (Instructor instructor in Model)
+{
+        <div class="col-sm-5" style="display:inline-block;margin-top:5px;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@instructor.Name</h5>
+                    <p class="card-text">Department: @instructor.Department.Name</p>
+                    <a href="/Instructor/Details/@instructor.Id/#Details" class="btn btn-primary">Details</a>
+                    <a href="/Instructor/Edit/@instructor.Id/#EditInstructor" class="btn btn-primary">Edit</a>
+                    <a href="/Instructor/Delete/@instructor.Id" class="btn btn-primary">Remove</a>
+
+
+                </div>
+            </div>
+        </div>
+        
+        <pre style="display:inline-block">     </pre>
+}
+
+
+
+

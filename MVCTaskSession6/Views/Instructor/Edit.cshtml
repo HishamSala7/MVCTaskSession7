@@ -1,0 +1,50 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Edit";
+    SelectList DeptList = new SelectList(ViewBag.Depts, "Id", "Name");
+    SelectList CourseList = new SelectList(ViewBag.Courses, "Id", "Name");
+}
+
+<br id="EditInstructor" />
+<h1>Edit</h1>
+
+<form action="/Instructor/SaveEdit/@Model.Id/#EditInstructor" method="post">
+
+    <div>
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Salary">Salary</label>
+        <input class="form-control" asp-for="Salary" />
+    </div>
+
+    <div>
+        <label asp-for="Address">Address</label>
+        <input class="form-control" asp-for="Address" />
+    </div>
+
+    <div>
+        <label asp-for="ImagePath">ImagePath</label>
+        <input class="form-control" asp-for="ImagePath" />
+    </div>
+
+    <div>
+        <label asp-for="DepartmentId">DepartmentId</label>
+        <select class="form-control" asp-for="DepartmentId" asp-items="DeptList">
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="CourseId">CourseId</label>
+        <select class="form-control" asp-for="CourseId" asp-items="CourseList">
+        </select>
+    </div>
+
+    <br />
+
+    <input class="btn btn-primary" style="width:10%;" type="submit" value="Save" />
+    <a href="/Instructor/Index/#Instructors" class="btn btn-primary" style="width:10%;">Back</a>
+
+</form>

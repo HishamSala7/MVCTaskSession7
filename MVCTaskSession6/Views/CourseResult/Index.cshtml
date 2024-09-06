@@ -1,0 +1,44 @@
+﻿@model List<CourseResult>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br id="CourseResult" />
+
+<h1>Student Grades</h1>
+
+<hr />
+
+<a href="/CourseResult/AddNewGrade/#AddNewGrade" class="btn btn-primary">Add New Grade</a>
+
+<table class="table table-border table-hover">
+    
+    <tr>
+        <th>Trainee Name</th>
+        <th>Course</th>
+        <th>Degree</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach(CourseResult item in Model)
+    {
+        <tr>
+            <td>@item.Trainee.Name</td>
+            <td>@item.Course.Name</td>
+            <td>@item.Degree</td>
+
+
+            <td>
+                <a href="/CourseResult/Delete/@item.Id/#Delete">Remove</a>
+            </td>
+
+            @* <td>
+                <a href="/CourseResult/Update/@item.Id/#Update">Update</a>
+            </td> *@
+        </tr>
+    }
+
+</table>
+
+
+

@@ -1,0 +1,27 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<br id="Details" />
+
+<h1>
+	Details...
+</h1>
+
+<hr />
+
+
+
+<div class="col-sm-5" style="display:block; margin-top:5px; margi">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">@Model.Name</h5>
+			<p class="card-text">Manager Name: @Model.ManagerName</p>
+
+			<a href="/Department/Index/#Departments" class="btn btn-primary">Back</a>
+
+		</div>
+	</div>
+</div>

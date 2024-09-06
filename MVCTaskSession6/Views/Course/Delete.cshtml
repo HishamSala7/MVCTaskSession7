@@ -1,0 +1,38 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br id="RemoveCourse"/>
+
+<h1>Delete Course</h1>
+
+<hr />
+
+<div class="col-sm-5" style="margin-top:5px; ">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Course Details..</h5>
+            <p class="card-text">Name: @Model.Name</p>
+            <p class="card-text">Degree: @Model.Degree</p>
+            <p class="card-text">Min Degree: @Model.MinDegree</p>
+
+            @* <a href="/Instructor/Details/@instructor.Id/#Details" class="btn btn-primary">Details</a>
+            <a href="/Instructor/Edit/@instructor.Id/#EditInstructor" class="btn btn-primary">Edit</a>
+            <a href="/Instructor/Delete/@instructor.Id" class="btn btn-primary">Remove</a> *@
+
+
+            
+        </div>
+    </div>
+</div>
+
+<br />
+
+<h6 class="text-danger">Are You Sure?! You Want to Delete (@Model.Name) Course?</h6>
+<a href="/Course/SaveDelete/@Model.Id/#DeleteAlret" class="btn btn-primary" style="width:10%;">Yes</a>
+<a href="/Course/Index/#Courses" class="btn btn-primary" style="width:10%;d">No</a>
+@* <a href="/Course/Index/#Courses" class="btn btn-primary" style="width:10%;">Back</a> *@
+
+
+

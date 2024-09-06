@@ -1,0 +1,28 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<br id="EditDepartment" />
+<h1>Edit</h1>
+
+<form action="/Department/SaveEdit/@Model.Id/#EditDepartment" method="post">
+
+    <div>
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="ManagerName"></label>
+        <input class="form-control" asp-for="ManagerName" />
+    </div>
+
+    <br />
+
+    <input class="btn btn-primary" style="width:10%;" type="submit" value="Save" />
+    <a href="/Department/Index/#Departments" class="btn btn-primary" style="width:10%;">Back</a>
+
+</form>
+

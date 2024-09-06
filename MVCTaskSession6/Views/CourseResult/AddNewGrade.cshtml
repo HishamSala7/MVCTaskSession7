@@ -1,0 +1,48 @@
+﻿@model CourseResult
+@{
+    ViewData["Title"] = "AddNewGrade";
+    SelectList CourseList = new SelectList(ViewBag.Courses, "Id", "Name");
+    SelectList TraineeList = new SelectList(ViewBag.Trainees, "Id", "Name");
+}
+
+<br id="AddNewGrade" />
+
+<h1>Add New Grade</h1>
+
+<hr />
+
+<form method="post" action="/CourseResult/SaveNewResult/#AddNewGrade">
+
+   
+
+    <div>
+
+        <label asp-for="CourseId">Course Name</label>
+        <select class="form-control" asp-for="CourseId" asp-items="CourseList"></select>
+        <span asp-validation-for="CourseId" class="text-danger"></span>
+    </div>
+
+    <div>
+
+        <label asp-for="TraineeId">Trainee Name</label>
+        <select class="form-control" asp-for="TraineeId" asp-items="TraineeList"></select>
+        <span asp-validation-for="TraineeId" class="text-danger"></span>
+    </div>
+
+
+
+    <div>
+        <label asp-for="Degree"></label>
+        <input class="form-control" asp-for="Degree" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <input class="btn btn-primary" style="width:10%;" type="submit" value="Save" />
+    <a href="/CourseResult/Index/#CourseResult" class="btn btn-primary" style="width:10%;">Back</a>
+
+</form>
+
+
+
